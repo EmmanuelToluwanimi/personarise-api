@@ -1,0 +1,32 @@
+{
+  "name": "personarise-test-api",
+  "version": "1.0.0",
+  "description": "This is an assessment test by Personarise for the role of Fullstack Engineer. The project contains few features such as getting or importing jobs from LinkedIn through a chrome extension built along with this project to users dashboard, filter, sort, categorize these jobs and other few ooperations.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "personarise",
+    "chrome-extension",
+    "linkedIn",
+    "jobs",
+    "crud",
+    "fullstack"
+  ],
+  "author": "Amusan T. Emmanuel",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "mongoose": "^6.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
