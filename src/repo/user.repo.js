@@ -16,10 +16,8 @@ const findUserByEmail = async (email) => {
     });
 }
 
-const findUserById = async (uid) => {
-    return await User.findOne({
-        uid
-    });
+const findUserById = async (id) => {
+    return await User.findById(id);
 }
 
 module.exports = {

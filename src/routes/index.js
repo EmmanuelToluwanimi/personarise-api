@@ -1,8 +1,10 @@
 const { ROUTES } = require("../utils/constants");
 const authRouter = require("./auth");
+const jobRouter = require("./job");
 
 
-const {HEALTHCHECK, AUTH} = ROUTES;
+
+const {HEALTHCHECK, AUTH, JOB} = ROUTES;
 
 /**
  * 
@@ -11,7 +13,7 @@ const {HEALTHCHECK, AUTH} = ROUTES;
 function routes(app) {
     app.get(HEALTHCHECK, (req, res)=> {res.send("OK")});
     app.use(AUTH, authRouter);
-
+    app.use(JOB, jobRouter);
 }
 
 module.exports = routes;
