@@ -1,7 +1,9 @@
 const Job = require('../model/job.model');
 
 const findAllUserJobs = async (id) => {
-    return await Job.find({user: id}).populate({ path: 'user', select: ["username", "email"]})
+    return await Job.find({user: id})
+    .sort({ createdAt: -1 })
+    .populate({ path: 'user', select: ["username", "email"]});
 }
 
 const storeJobs = async (jobs) => {
@@ -9,7 +11,7 @@ const storeJobs = async (jobs) => {
 }
 
 const findSingleJob = async (id) => {
-    return await Job.findOne({jobId: id})
+    return await Job.findOne({jobId: id}).populate({ path: 'user', select: ["username", "email"]});
 }
 
 module.exports = {

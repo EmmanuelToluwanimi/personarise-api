@@ -7,7 +7,7 @@ const createJobsController = async (req, res)=> {
     try {
         const user = req?.user;
         const {jobs} = req.body;
-        if(jobs.length < 1){
+        if(!jobs || jobs.length < 1){
             return errorResponse({
                 res,
                 statusCode: 400,
@@ -60,7 +60,16 @@ const getSingleJobController = async (req, res)=> {
     const { id } = req.params;
 
     try {
-        const {job} = await getSIngleJob(id);
+        const {job, message, statusCode} = await getSIngleJob(id);
+        if(message){
+            return errorResponse({
+                res,
+                statusCode,
+                status: "fail",
+                message
+            });
+        }
+
         return okResponse({
             res,
             status: "success",

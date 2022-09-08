@@ -13,7 +13,7 @@ const ROUTES = {
     HEALTHCHECK: "/api/healthcheck",
     AUTH: "/api/auth",
     USER: "/api/user",
-    JOB: "/api/job",
+    JOB: "/api/jobs",
     LOGIN: "/login",
     REGISTER: "/signup",
     ID: "/:id",

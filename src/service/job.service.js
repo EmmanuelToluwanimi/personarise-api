@@ -23,6 +23,12 @@ const getAllUserJobs = async (id) =>{
 const getSIngleJob = async (id) =>{
     try{
         const job = await findSingleJob(id);
+        if(!job){
+            return {
+                statusCode: 404,
+                message: "Job not found",
+            }
+        }
         return {
             job
         }
